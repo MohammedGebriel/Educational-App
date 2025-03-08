@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import DarkToggle from "./components/dark-mode/DarkToggle"
+import Layout from "./components/organisms/Layout"
 
 function App() {
   return (
-    <div className="">
-      <DarkToggle />
+    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<h1>Home Page</h1>}/>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<h1>Home</h1>} />
+        </Route>
       </Routes>
-    </div>
+    </BrowserRouter>
   )
 }
 
